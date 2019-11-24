@@ -13,7 +13,7 @@ import Strings from '../assets/Strings';
 import AppHeader from '../common/AppHeader';
 import {Actions} from 'react-native-router-flux'
 
-
+const price = 1850000
 const WIDTH = Dimensions.get('screen').width
 class BMW19 extends Component {
     constructor() {
@@ -23,6 +23,7 @@ class BMW19 extends Component {
         }
     }
     render() {
+        
         YellowBox.ignoreWarnings([
             'Warning: ViewPagerAndroid has been extracted',
             
@@ -30,7 +31,7 @@ class BMW19 extends Component {
         return(
            <View style={{flex:1}}>
                 <StatusBar hidden />
-                <AppHeader text={Strings.details} Licon='arrow-back' Ricon= 'shopping-cart' Ltype='MaterialIcons' Rtype='MaterialIcons' onPressLeft={()=>Actions.pop()} onPressRight={()=> Actions.finalOrder({items: this.props.add})}/>
+                <AppHeader text={Strings.details} Licon='arrow-back' Ricon= 'shopping-cart' Ltype='MaterialIcons' Rtype='MaterialIcons' onPressLeft={()=>Actions.pop()} onPressRight={()=> Actions.finalOrder({items: this.props.add, itemPrice: price})}/>
                 <View style={{ flex: 10, flexDirection: 'column', backgroundColor: 'white' }}>
                     
                     
@@ -117,14 +118,14 @@ class BMW19 extends Component {
                     <View style={{flexDirection:'row' ,position: 'absolute', bottom: 0, left: 0, right: 0, backgroundColor: color.TEXT_COLOR, height: hp(7) }}>
                         <Button onPress={()=>{ 
                                this.props.IncrementCounter(),
-                               this.props.AddToCart(Strings.bmw19) 
+                               this.props.AddToCart(Strings.bmw19, price) 
                                
                                
                              }} style={{ flexDirection: this.props.isRtl ? 'row-reverse' : 'row', backgroundColor: color.MAIN_COLOR, width: WIDTH / 2, height: hp(7), alignItems: 'center', justifyContent: 'center' }}>
                             <Icon name='add-shopping-cart' type='MaterialIcons' style={{ fontSize: wp(6), color: color.TEXT_COLOR }} />
                             <AppText text={Strings.addToCart} fontSize={wp(4)} color={color.TEXT_COLOR} />
                         </Button>
-                        <AppText text={`${Strings.EGP} 1,850,000`} fontSize={wp(5)} color={color.MAIN_COLOR} marginLeft={wp(5)} marginVertical={hp(1)}/>
+                        <AppText text={`${Strings.EGP} ${price}`} fontSize={wp(5)} color={color.MAIN_COLOR} marginLeft={wp(5)} marginVertical={hp(1)}/>
                     </View>
                 </View>
            </View>

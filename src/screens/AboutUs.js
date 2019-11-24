@@ -33,10 +33,10 @@ import { Actions } from 'react-native-router-flux';
             <View style={{flex:1}}>
             <StatusBar hidden/>
             <AppHeader text={Strings.about} Licon='ios-menu'  Ltype='Ionicons'  onPressLeft={()=> Actions.drawerOpen()} />
-            <View style={{flex:5,backgroundColor:'white'}}>
+            <View style={{flex:1, backgroundColor:'white', justifyContent:'center', alignItems:'center'}}>
                 
-                <AppText  text={Strings.Diva} color='#b89f57' fontSize={wp(7)}  marginHorizontal={wp(40)}/>
-                <AppText  text={this.state.Description} color='black' fontSize={wp(3)} marginHorizontal={wp(3)} marginVertical={hp(6)}/>
+                <AppText  text={Strings.Diva} color='#b89f57' fontSize={wp(7)}  marginHorizontal={wp(40)} />
+                <AppText  text={this.state.Description} color='black' fontSize={wp(3)} marginHorizontal={wp(3)} marginVertical={hp(2)}/>
             </View>
             </View>
         )

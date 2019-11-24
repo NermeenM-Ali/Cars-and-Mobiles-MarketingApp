@@ -9,13 +9,15 @@ const initialState = {
 
     switch (action.type) {
         case types.ADD_TO_CART:
-            return { items: [...state.items, action.payload]}
+            return { items: [...state.items, action.payload], total: state.total+ action.price}
         
         case types.REMOVE_FROM_CART:
-            return { ...state, items:state.items.filter((item, i) => item !== action.payload)}
-            
+            return { ...state, items: state.items.filter((item, i) => i !== action.payload)}
+
+        case types.RESET_PRICE:
+            return {...state, total: state.total-action.payload}    
         case types.EMPTY_CART: 
-            return {...state, items:[], total:0}    
+            return initialState    
         default:
              return state     
     }

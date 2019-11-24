@@ -18,7 +18,7 @@ class ContactUs extends Component {
                <AppHeader text={Strings.contactUs} Licon='ios-menu' onPressLeft={()=> Actions.drawerOpen()}/>
                 <Container style={{flex:8}}>
                 
-                <Card style={{borderColor: color.MAIN_COLOR, height:hp(30), marginTop:wp(10), borderRadius:wp(10),borderWidth:wp(0.5)}}>
+                <Card style={{borderColor: color.MAIN_COLOR, height:hp(30), marginTop:wp(3), borderRadius:wp(2),borderWidth:wp(0.5)}}>
                     <View style={{flexDirection:'row' , marginTop:wp(5),flexDirection:this.props.isRtl? 'row-reverse' :'row'}}>
                         <Icon name='ios-compass' style={{color:color.MAIN_COLOR,fontSize:wp(8) , marginRight:wp(2), marginLeft:wp(2)}}/>
                         <AppText text=' : ' fontSize={wp(5)} marginLeft={wp(2)} color={color.MAIN_COLOR}/>  
@@ -38,7 +38,7 @@ class ContactUs extends Component {
                     </View>
                     
                 </Card>
-                
+                <Text style={{alignSelf:'center', marginTop:hp(25), fontSize:wp(4), color:color.TEXT_COLOR}}>Contact Us any Time ...</Text>
             </Container>
            </View>
         )

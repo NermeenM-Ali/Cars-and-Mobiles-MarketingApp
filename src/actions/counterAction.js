@@ -11,3 +11,8 @@ export const DecrementCounter = ()=>{
         dispatch({type: types.DECREMENT_COUNTER})
     }
 }
+export const ResetCounter = ()=> {
+    return (dispatch) => {
+        dispatch({type: types.RESET_COUNTER})
+    }
+}

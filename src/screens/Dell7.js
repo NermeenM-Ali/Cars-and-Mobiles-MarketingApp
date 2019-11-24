@@ -13,10 +13,11 @@ import Strings from '../assets/Strings';
 import AppHeader from '../common/AppHeader';
 import {Actions} from 'react-native-router-flux'
 
-
+const price=23199
 const WIDTH = Dimensions.get('screen').width
 class Dell7 extends Component {
     render() {
+        
         YellowBox.ignoreWarnings([
             'Warning: ViewPagerAndroid has been extracted',
             
@@ -24,7 +25,7 @@ class Dell7 extends Component {
         return(
            <View style={{flex:1}}>
                 <StatusBar hidden />
-                <AppHeader text={Strings.details} Licon='arrow-back' Ricon= 'shopping-cart' Ltype='MaterialIcons' Rtype='MaterialIcons' onPressLeft={()=>Actions.pop()} onPressRight={()=> Actions.finalOrder({items: this.props.add})}/>
+                <AppHeader text={Strings.details} Licon='arrow-back' Ricon= 'shopping-cart' Ltype='MaterialIcons' Rtype='MaterialIcons' onPressLeft={()=>Actions.pop()} onPressRight={()=> Actions.finalOrder({items: this.props.add, itemPrice: price})}/>
                 <View style={{ flex: 10, flexDirection: 'column', backgroundColor: 'white' }}>
                     
                 <Swiper autoplay={false} loop={false} showsButtons={false} style={{ position: 'absolute', top: 0, left: 0, right: 0, height: hp(50)}}>
@@ -101,7 +102,7 @@ class Dell7 extends Component {
                             <Icon name='add-shopping-cart' type='MaterialIcons' style={{ fontSize: wp(6), color: color.TEXT_COLOR }} />
                             <AppText text={Strings.addToCart} fontSize={wp(4)} color={color.TEXT_COLOR} />
                         </Button>
-                        <AppText text={`${Strings.EGP} 23,199`} fontSize={wp(5)} color={color.MAIN_COLOR} marginLeft={wp(5)} marginVertical={hp(1)}/>
+                        <AppText text={`${Strings.EGP} ${price}`} fontSize={wp(5)} color={color.MAIN_COLOR} marginLeft={wp(5)} marginVertical={hp(1)}/>
                     </View>
                 </View>
            </View>

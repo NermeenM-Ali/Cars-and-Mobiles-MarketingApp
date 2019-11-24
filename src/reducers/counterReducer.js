@@ -14,6 +14,8 @@ const counterReducer = (state=initialState, action)=> {
             return Object.assign({}, state, {
                 counter: state.counter-1
             })
+        case types.RESET_COUNTER:
+            return initialState    
         default:
             return state       
     }

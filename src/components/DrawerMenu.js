@@ -32,7 +32,7 @@ class DrawerMenu extends Component {
                         <List >
                             <ListItem  style={{flexDirection: this.props.isRtl? 'row-reverse' : 'row'}}>
                                 <Icon name='star' type='AntDesign' style={{fontSize:wp(6), color:color.TEXT_COLOR}} />
-                                <AppText text= {Strings.categories} color={color.TEXT_COLOR}  marginHorizontal= {wp(2)} onPress={()=> Actions.home()}/>
+                                <AppText text= {Strings.categories} color={color.TEXT_COLOR}  marginHorizontal= {wp(2)} onPress={()=> Actions.categories()}/>
                             </ListItem>
 
                             <ListItem   style={{flexDirection: this.props.isRtl? 'row-reverse' : 'row'}}>

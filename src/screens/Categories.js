@@ -15,7 +15,7 @@ class Categories extends Component {
         return(
             <View style={{flex:1}} >
                 <StatusBar hidden/>
-                   <AppHeader text={Strings.categories} Micon='search' Mtype='MaterialIcons' Licon='ios-menu' Ricon='shopping-cart' Ltype='Ionicons' Rtype='MaterialIcons' onPressLeft={()=>Actions.drawerOpen()} onPressRight={()=> Actions.finalOrder({items:this.props.add})}/>
+                   <AppHeader text={Strings.categories}  Licon='ios-menu' Ricon='shopping-cart' Ltype='Ionicons' Rtype='MaterialIcons' onPressLeft={()=>Actions.drawerOpen()} onPressRight={()=> Actions.finalOrder({items:this.props.add})}/>
                <View style={{flex:9, backgroundColor:'white'}}>
                <ScrollView>
                     <Card  style={{borderColor: color.MAIN_COLOR}}>
